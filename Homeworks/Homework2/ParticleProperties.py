@@ -4,8 +4,8 @@ from ReadFile import Read #import module to call Read from Readfile
 
 def ParticleInfo(filename,ptype,pnumber): #Define a funciton that takes filename,ptype=particle type, and pnumber=particle number as inputs
     
-     data = np.genfromtxt(filename,dtype=None,names=True,skip_header=3)#read file again via ReadFile store remainder of the file starting from the 4th line and onwards
-
+     time, total, data = Read(filename) #calling ReadFile function
+     
      index = np.where(data['type'] == ptype) # create an index which takes data that has type = 2 (DiskStars)
 
      #calculating 3D distance

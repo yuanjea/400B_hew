@@ -17,7 +17,7 @@ def Read(filename): #Define a function that takes a file as input
 
     data = np.genfromtxt(filename,dtype=None,names=True,skip_header=3)#store remainder of the file starting from the 4th line and onwards
     
-    print("Particle Type: ",data['type'][1]) #check: printing 1st column 2nd entry
+    #print("Particle Type: ",data['type'][1]) #check: printing 1st column 2nd entry
     
     return time, total, data #returning time, total number of particles, and data array
 
