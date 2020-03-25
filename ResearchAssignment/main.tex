@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{graphicx} 
+\usepackage{natbib}
+
+
+\title{ASTR400B: Research Assignment 2}
+\author{YuanJea Hew}
+\date{March 24th 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+The topic of interest for this research assignment is regarding dark matter haloes, particularly the Milky Way and Andromeda future major merger event. The research project will explore the final density profile of the corresponding halo merger remnant and how if it changed from its initial profile. Besides that, the concentration of Milky Way and Andromeda will be compared with its initial and final stage of the merging process. \par
+It has been widely accepted that dark matter contributes to 85\% of the matter in the universe. Hence, the influence of dark matter on the structures of galaxies and its evolution is massive. It is important to note that the effects of dark matter can be found in all visible galaxy formations as well. The density of dark matter haloes is described to be proportional to the scale radius in galaxies . It has been speculated that major mergers could result of such phenomenon \citep{d19b}. With that, the potential correlation can be validated by studying these events through numerical simulations. Furthermore, by investigating the merger remnant event of the Milky Way and Andromeda, we can form a better understanding in the evolution of dark matter haloes. The properties of dark matter of how it settles into its final density profile will be investigated and see how it differs from initial density profiles from Milky Way and Andromeda. Another importance of understanding galaxy evolution is that we can verify theories with observations. The profiles in which dark matter is expressed in merger remnants in the simulation can possibly test the hypothetical Cold Dark Matter paradigm. \par 
+As stated earlier, there is a large consensus regarding our understanding of dark matter density in relation to galaxies scale radius \citep{d19b}. The universal density profiles of dark matter haloes are described by the Navarro-Frenk-White form \citep{d19b}. However, \cite{d19b} suggest that Einasto density profiles are better expressed instead \citep{d19b}. The paper also states that equal massed galaxies such as Milky Way and Andromeda, there will only be a subtle difference in density profiles between initial haloes and haloes of merger remnants \citep{d19b}. In regards to the changes in concentration, the research concluded that high energetic mergers will result to an increase in concentration. Whereas, low energetic mergers causes a decrease from its initial concentration \citep{d19b}. \par
+An open topic questions regarding halo density profiles is that the endpoint of the halo is questionable \citep{d13}. This will affect on how the final density is being calculated. Another open topic question is that how major merger affects the evolution of halo structure \citep{d19a}. A major merger event consist of many degrees of freedom such as the orbit, mass profile, and shape to determine the complete structure of the final remnant \citep{d19a}.
+\begin{center}
+\includegraphics[width=1.0\textwidth]{400b1.png} \par
+Figure 1: Plots of density profiles of halo remnant. The grey dashed lines indicate the initial halo profile, black dotted lines show the initial conditions with rescaled radius, and the colored lines are the merger remnant profiles with different energy change.
+\end{center}
+
+\section{The Proposal}
+\subsection{Specific Questions}
+The specific questions that I will be addressing in this research project are the following: \par 
+\begin{itemize}
+    \item What is the final dark matter halo density profile of the Milky Way - Andromeda major merger remnant?
+    \item How does the final halo density profile compare with the galaxy's initial halo density profile ?
+    \item How does the final halo density concentration compare with the galaxy's initial halo density profile ?
+\end{itemize}
+\subsection{Approach}
+The research project will attempt to answer the specified questions above using sections of python code from the course homework and labs. Since we are focusing on dark matter halo aspect of the galaxy, particle type = 1 will only be considered in both galaxies data file. Both Milky Way and Andromeda are to be modeled as Hernquist profiles before the collision. In reference to Lab 6, the merger remnant density profile will be plotted along side the Hernquist profile to compare the difference between the initial and final state. Homework 6 will be used to provide insights on when the merger event occurs along with when both galaxies settle into one merger remnant. This will help locate the time for the initial and final conditions of the system. For the concentration, the research assignment will obtain the concentration parameter for both initial and final merger state based on the information of their corresponding density profile. I will then construct a plot of both concentration parameters for comparisons.
+\begin{center}
+\includegraphics[width=.6\textwidth]{400b.png} \par
+Figure 2: This plot was obtained from Lab 6 on fitting the Buldge Density of the Milky Way to the Sersic Profile. The same methodology will be applied to fitting the Halo Density of the remnant to the Hernquist Profile.
+\end{center}
+
+\subsection{Hypothesis}
+My prediction is that the final density profile of the merger remnant is to be settled relatively similar to the initial density profiles of both galaxies due to self-similarity evolution. Therefore, the merger remnant should show only subtle differences when compared to the initial Hernquist profile. It is difficult to predict how much concentration change between the initial and final state would have. However, it is trivial to think that merger remnants would have a higher concentration than the state before they merged.
+
+\bibliography{reference}
+\bibliographystyle{aasjournal}
+
+\end{document}
+
