@@ -1,0 +1,66 @@
+\documentclass[twocolumn]{aastex63}
+
+
+\newcommand{\vdag}{(v)^\dagger}
+\newcommand\aastex{AAS\TeX}
+\newcommand\latex{La\TeX}
+
+\received{March 19, 2020}
+\revised{January 10, 2019}
+\accepted{\today}
+%% Command to document which AAS Journal the manuscript was submitted to.
+%% Adds "Submitted to " the argument.
+\submitjournal{AJ}
+
+\shorttitle{Demo}
+\shortauthors{ASTR400B}
+
+\begin{document}
+
+\title{The Final Density Profile and Concentration of the Milky Way and M31 Major Merger Remnant}
+\author{YuanJea Hew}
+\date{April, 16 2020}
+
+\keywords{Major Merger --- Hernquist Profile --- Concentration Parameter --- Merger Remnant --- Critical Density}
+
+\section{Introduction}
+\label{sec:intro}
+The topic of interest for this research assignment is regarding dark matter haloes, particularly the dark matter halo formed by the Milky Way and Andromeda future major merger event. A major merger is defined to be a massive galactic collision. The research project will explore the final density profile of the corresponding halo merger remnant and how it changed from its initial profile. A halo merger remnant is a the dark matter halo as a result of a merger event. In addition, the concentration parameter of the dark matter halo profiles for the Milky Way and Andromeda will be compared with its initial and final stage of the merging process. Concentration parameter is the ratio between the radius of the edge of the galaxy, $R_{200}$ to the scale radius, $R_{scale}$. With that, the concentration parameter, c can be expressed as the following,
+\[ c = \frac{R_{200}}{R_{scale}} \]\par
+It has been widely accepted that dark matter contributes 85\% of the matter in the universe \cite{Planck}. Hence we expect dark matter to influence the structure and evolution of galaxies. For example, the scale radius of stellar disks is believed to be proposal to the density of dark matter halos. It has been speculated that such relationships arise because of major mergers\citep{d19b}. The potential correlation can be validated by studying the major merger of two spiral galaxies through numerical simulations.\par 
+Furthermore, by investigating the merger remnant of the Milky Way and Andromeda, we can form a better understanding of the evolution of dark matter haloes. The evolution of the dark matter density profile of the merger remnant will be investigated and and compared against the initial density profiles from Milky Way and Andromeda.\par 
+Another importance of understanding galaxy evolution of studying galaxy mergers is that we can verify theories with observations. The profiles in which dark matter is expressed in merger remnants in the simulation can possibly test the hypothetical Cold Dark Matter paradigm. The universal density profiles of dark matter haloes are described by the Navarro-Frenk-White (NFW) form \citep{d19b}.
+\[ \rho_{NFW}(r) = \frac{\rho_{0}r^3_{s}}{r(r+r_{s})^2} \]
+where $\rho_{0}$ is the characteristic density and $r_{s}$ is the scale radius. However, Drakos et al 2019 suggest that Einasto density profiles are better expressed instead with the consideration of the profiles structure\citep{d19b}.
+\[ \rho_{Einasto}(r) = \rho_{-2}exp(\frac{-2}{a_E}[(\frac{r}{r_{-2}})^{a_E} -1)}]) \]
+where $\rho_{-2}$ is the density where the logarithmic slope is -2, $a_{E}$ is the shape parameter, and $r_{-2}$ is the radius where the logarithmic slope is -2.
+The paper also states that equal massed galaxies such as Milky Way and Andromeda, there will only be a subtle difference in density profiles between initial haloes and haloes of merger remnants \citep{d19b}. This is can be explained with the nature of self similar evolution of 2 equal mass mergers \citep{d19b}. In regards to the changes in concentration, the Drakos et al 2019 concluded that high energetic mergers will result to an increase in concentration. Whereas, low energetic mergers causes a decrease from its initial concentration \citep{d19b}. \par
+An open topic questions regarding halo density profiles is that the edge of the halo is questionable \citep{d13}. Another open question is that major merger affects the evolution of halo structure \citep{d19a}. A major merger event consist of many degrees of freedom such as the orbit, mass profile, and shape to determine the complete structure of the final remnant \citep{d19a}.
+
+\begin{center}
+%%\includegraphics[width=1.0\textwidth]{400b1.png} \par
+Figure 1: Plots of density profiles of halo remnant. The grey dashed lines indicate the initial halo profile, black dotted lines show the initial conditions with rescaled radius, and the colored lines are the merger remnant profiles with different energy change.
+\end{center}
+
+
+\section{This Project}
+The aim for this research project is to find out the final halo density profile of the future Milky Way and Andromeda major merger remnant. The final density of the merger will be compared with multiple density profiles such as the Hernquist profile and NFW profile through overplots. This will illustrate if the halo merger remnant evolves differently than its initial Hernquist or NFW profiles. Moreover, the paper will also investigate the concentration of the Milky Way and Andromeda merger remnant throughout 3 snapshots: before, during, and after the major merger event. \par 
+As mentioned in the Introduction, the specific open question that this research project will address is how major mergers affect the overtime change in halo structure. With multitudes of degrees of freedom embedded in this particular merger event, this paper utilizes simulations instead to restrict degrees of freedom as constraints. \par
+This open question is a significant step on understanding the evolution of galaxies. By formulating a simulation of this major merger, theories in astronomy such as the self similar evolution occurrence between equal mass galaxies will be tested. From here, the conjuction  between computational physics and observational astronomy can help formulate connections which results into a better understanding on the subject matter. Generally, this paper will address the open question regarding how mergers evolve overtime by setting a particular initial halo density profile and then using simulation data snapshots to analyze the change in density profiles throughout key stages of the major merger event. \par
+
+\section{Methodology}
+The simulation that will be used in this research assignment is the Milky Way and Andromeda major merger event. There are 800 snapshots for both Milky Way and Andromeda that spans across 11 billion years in the dataset. Each snapshot contains datapoints regarding the time, position coordinates, and velocity coordinates of their corresponding galaxy. However, for the purpose of achieving the project goals, the paper will consider several snapshots ranging in the events prior, during and after the major merger event.\par 
+The research project will attempt to answer the specified questions above using sections of python code from the course homework and labs. Since we are focusing on dark matter halo aspect of the galaxy, particle type = 1 will only be considered in both galaxies data file. Both Milky Way and Andromeda are to be modeled as Hernquist profiles before the collision. Homework 6 will be used to provide insights on when the merger event occurs along with when both galaxies settle into one merger remnant. This will help locate the time and corresponding snapshot number for the initial and final conditions of the system. In reference to Lab 6, the merger remnant density profile will be plotted along side the Hernquist profile to compare the difference between the initial and final state. For the concentration, the research assignment will obtain the concentration parameter for both initial and final merger state based on the information of their corresponding density profile.\par
+The computational calculations to consider in this research project are computed through Python codes. To achieve the final density of the merger remnant, the MassProfile function from Homework 6 will need to be modified to take into account of 2 galaxies, that is the Milky Way and Andromeda. Then, selecting the a snapnumber that corresponds to when the separation of Milky Way and Andromeda is zero in the plot, the function will output the Mass Profile of the halo merger remnant.
+\[ \rho = \frac{M_{halo}}{V} \] 
+\[ \rho_{Hernquist} = \frac{M_{halo}}{2\pi} \frac{a}{r(r+a)^3} \] 
+where $M_{halo}$ is the mass of the merger remnant halo, V is the volume of the merger halo, a is the Hernquist scale length, r is the radius. Using the formulas above, the general density and Hernquist density of the halo merger remnant can be obtained. To find out if the final density of the system has changed from its initial density, the paper will overplot the initial Herquist density with the general denisty and Hernquist density of the merger remnant computed earlier. The denisty overplots will show if self similar evolution is produced as described in Drakos et al 2019.
+\[ \rho_{crit} = 1.617*10^2 \frac{M_{sun}}{kpc^3} \] 
+The critical density value which is defined to be the minimum density required to maintain a flat universe. The edge of the merger remnant halo, $R_{200}$ is 200 times the critical density, $\rho_{crit}$. With this information, the edge of the halo over different points in major merger event can be determined. The concentration of the dark matter halo in the remnant will be determined using the concentration parameter as defined in the introduction.\par
+To elaborate on the plots that will be constructed in this research project, the final halo density of the major merger remnant can be compared to any type of density profile through overplots in a logarithmic density vs radius graph. The key density profile to set side by side with is the initial Hernquist density profile of the Milky Way and Andromeda. Other profiles such as NFW will also be considered if the overplots yield significant findings compared with the merger remnant. In another plot, the critical density value is multiplied by 200 and will be overplotted into various density profiles of the merger remnant in different snaphots. The point where the corresponding density profile and the critical density intersects in the graph will reveal the edge of the dark matter halo remnant, $R_{200}$\par
+My prediction is that the final density profile of the merger remnant is to be settled relatively similar to the initial density profiles of both galaxies due to self-similarity evolution. Therefore, the merger remnant should show only subtle differences when compared to the initial Hernquist profile. It is difficult to predict how much concentration change between the initial and final state would have. However, it is trivial to think that merger remnants would have a higher concentration than the state before they merged.\par
+
+\bibliography{reference}
+\bibliographystyle{aasjournal}
+
+\end{document}
