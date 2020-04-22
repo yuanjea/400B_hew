@@ -28,7 +28,7 @@ G = G.to(u.kpc*u.km**2/u.s**2/u.Msun) # 4.498768e-6*u.kpc**3/u.Gyr**2/u.Msun
 class MassProfile:
     # Class to define the Mass and Rotation Curve of a Galaxy
     
-    def __init__(self, galaxy1, galaxy2, snap):
+    def __init__(self, galaxy, snap):
     # Initialize the instance of this Class with the following properties:
     # galaxy :  string, e.g. "MW"
     #  snap :  integer, e.g  1
@@ -39,24 +39,20 @@ class MassProfile:
         # remove all but the last 3 digits
         ilbl = ilbl[-3:]
         # create filenames
-        self.filename1='%s_'%(galaxy1) + ilbl + '.txt'
-        self.filename2='%s_'%(galaxy2) + ilbl + '.txt'
-
-        # read in the file                                                                                             
-        self.time1, self.total1, self.data1 = Read(self.filename1)
-        self.time2, self.total2, self.data2 = Read(self.filename2)
-
-        # store the mass, positions, velocities of all particles 
-        # Concatenating both galaxy1 and galaxy2 arrays
-        self.m = np.concatenate([[self.data1['m']],[self.data2['m']]],axis=None)#*u.Msun
-        self.x = np.concatenate([[self.data1['x']],[self.data2['x']]], axis=None)
-        self.y = np.concatenate([[self.data1['y']],[self.data2['y']]], axis=None)
-        self.z = np.concatenate([[self.data1['z']],[self.data2['z']]], axis=None)
+        self.filename='%s_'%(galaxy) + ilbl + '.txt'
         
-        #print(self.m)
+        # read in the file                                                                                             
+        self.time, self.total, self.data = Read(self.filename)
+
+        # store the mass, positions, velocities of all particles                                
+        self.m = self.data['m']#*u.Msun
+        self.x = self.data['x']*u.kpc
+        self.y = self.data['y']*u.kpc
+        self.z = self.data['z']*u.kpc
+    
         # store galaxy name
-        self.gname1 = galaxy1
-        self.gname2 = galaxy2
+        self.gname = galaxy
+    
     
     
     def MassEnclosed(self, ptype, R):
@@ -65,15 +61,16 @@ class MassProfile:
     #        R   An Array of Radii within which to compute the mass enclosed. 
     # return: an array with the Mass enclosed (units of Msun)
         
-        # Determine the COM position using Halo Particle
-        # Create a COM object`
-        COM = CenterOfMass(self.filename1,1)
+        # Determine the COM position using Disk Particles
+        # Disk Particles afford the best centroiding.
+        # Create a COM object
+        COM = CenterOfMass(self.filename,2)
         # Store the COM position of the galaxy
         # Set Delta = whatever you determined to be a good value in Homework 4.
         GalCOMP = COM.COM_P(0.1)
             
         # create an array to store indexes of particles of desired Ptype                                                
-        index = np.where(self.data1['type'] == ptype)
+        index = np.where(self.data['type'] == ptype)
 
         # Store positions of particles of given ptype from the COMP. 
         xG = self.x[index] - GalCOMP[0]

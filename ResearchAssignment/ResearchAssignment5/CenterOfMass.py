@@ -152,8 +152,7 @@ class CenterOfMass:
         # return the COM positon vector
         # set the correct units using astropy                                                                      
         # round all values 
-        return np.round(COMP,2)
-    #*u.kpc
+        return np.round(COMP,2)*u.kpc
     
     
 
