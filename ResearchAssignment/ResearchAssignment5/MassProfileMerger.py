@@ -48,11 +48,11 @@ class MassProfileMerger:
 
         # store the mass, positions, velocities of all particles 
         # Concatenating both galaxy1 and galaxy2 arrays
-        self.m = np.concatenate([[self.data1['m']],[self.data2['m']]], axis=None)#*u.Msun
-        self.x = np.concatenate([[self.data1['x']],[self.data2['x']]], axis=None)
-        self.y = np.concatenate([[self.data1['y']],[self.data2['y']]], axis=None)
-        self.z = np.concatenate([[self.data1['z']],[self.data2['z']]], axis=None)
-        self.ptype = np.concatenate([[self.data1['type']],[self.data2['type']]], axis=None)
+        self.m = np.concatenate([self.data1['m'],self.data2['m']], axis=None)#*u.Msun
+        self.x = np.concatenate([self.data1['x'],self.data2['x']], axis=None)
+        self.y = np.concatenate([self.data1['y'],self.data2['y']], axis=None)
+        self.z = np.concatenate([self.data1['z'],self.data2['z']], axis=None)
+        self.ptype = np.concatenate([self.data1['type'],self.data2['type']], axis=None)
         
         #print(self.m)
         # store galaxy name
